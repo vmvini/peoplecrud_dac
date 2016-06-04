@@ -20,7 +20,7 @@ RUN         curl -L -o /tmp/glassfish4.zip http://download.java.net/glassfish/4.
 
 
 
-EXPOSE      8080 4848 8181
+EXPOSE      3700
 
 WORKDIR     /usr/glassfish4
 
