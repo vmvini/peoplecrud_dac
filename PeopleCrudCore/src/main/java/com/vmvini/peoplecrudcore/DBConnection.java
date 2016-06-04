@@ -34,7 +34,7 @@ public class DBConnection {
     
     
     private Connection connection;
-    private String url = "jdbc:postgresql://localhost:543/peopleCrud";
+    private String url = "jdbc:postgresql://postgres:5432/peopleCrud";
     private String senha = "12345";
     private String usuario = "postgres";
     
