@@ -25,7 +25,7 @@ public class PersonController {
     private Person person = new Person();
     private ServiceLocator sl = new ServiceLocator();
     
-    @EJB(lookup="java:global/PeopleCrudCore/PersonServiceImpl")
+    //@EJB(lookup="java:global/PeopleCrudCore/PersonServiceImpl")
     private PersonService personService;
     
     private PersonService getPersonService(){
@@ -34,11 +34,13 @@ public class PersonController {
     }
     
     public void addPerson(){
+        personService = getPersonService();
         personService.save(person);
         person = new Person();
     }
     
     public List<Person> listPersons(){
+        personService = getPersonService();
         return personService.list();
     }
     
