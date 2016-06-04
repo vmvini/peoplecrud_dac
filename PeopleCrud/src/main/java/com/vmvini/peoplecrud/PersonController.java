@@ -9,16 +9,15 @@ import com.vmvini.peoplecrudlibrary.Person;
 import com.vmvini.peoplecrudlibrary.PersonService;
 import com.vmvini.peoplecrudlibrary.ServiceLocator;
 import java.util.List;
-import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author marcusviniv
  */
 
-@Named
+@ManagedBean
 @RequestScoped
 public class PersonController {
     
