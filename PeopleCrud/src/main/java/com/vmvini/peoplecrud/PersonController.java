@@ -9,7 +9,6 @@ import com.vmvini.peoplecrudlibrary.Person;
 import com.vmvini.peoplecrudlibrary.PersonService;
 import com.vmvini.peoplecrudlibrary.ServiceLocator;
 import java.util.List;
-import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -29,13 +28,17 @@ public class PersonController {
     private PersonService personService;
     
    
-    public void addPerson(){
+    public String addPerson(){
         personService = sl.lookup("java:global/PeopleCrudCore/PersonServiceImpl!com.vmvini.peoplecrudlibrary.PersonService", PersonService.class);
         personService.save(person);
         person = new Person();
+        return null;
     }
     
     public List<Person> listPersons(){
+       
+        personService = sl.lookup("java:global/PeopleCrudCore/PersonServiceImpl!com.vmvini.peoplecrudlibrary.PersonService", PersonService.class);
+        
         return personService.list();
     }
     
