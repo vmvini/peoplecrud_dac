@@ -75,16 +75,8 @@ As the PeopleCrudClient will be deployed on your real machine, the above host pa
 
     sudo docker build -t postgres-peoplecrud . 
     sudo docker run -d --name peopleCrudDB postgres-peoplecrud
-  
-**4 - Copy the following libs to the PeopleCrudCore folder**
 
-    a) PeopleCrudLibrary-1.0-SNAPSHOT.jar 
-    (You can find it on PeopleCrudLibrary/target folder)
-    
-    b) postgresql-9.1-901-1.jdbc4.jar
-    (Download the postgres driver from the web) 
-    
-**5- Inside the PeopleCrudCore folder, do:**
+**4- Inside the PeopleCrudCore folder, do:**
 
     sudo docker build -t glassfish-peoplecrud .
     sudo docker run -d -p 370:3700 --link peopleCrudDB:postgres --name peopleCrudCore glassfish-peoplecrud 
@@ -94,15 +86,15 @@ The **--link** flag is telling to glassfish-peoplecrud container that `postgres`
 Thus, `postgres` will be interpreted as the network address of the postgres docker container.
 
 
-**6- Inside the PeopleCrud folder, do:**
+**5- Inside the PeopleCrud folder, do:**
 
     sudo docker build -t  glassfish-peoplecrudweb .
     sudo docker run -d -p 80:8080 --link peopleCrudCore:pcCore glassfish-peoplecrudweb
   
 Do you remember the `pcCore` value quoted at the beginning of this readme? The line of code above tells docker to interpret `pcCore` as the network address of the peopleCrudCore container.
 
-**7- WEB Client test:**
+**6- WEB Client test:**
     open  `http://0.0.0.0/PeopleCrud/`  on the browser. 
     
-**8- Desktop Client test:**
+**7- Desktop Client test:**
     Through your IDE, execute the MainFrame class.
