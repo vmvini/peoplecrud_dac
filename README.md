@@ -63,7 +63,7 @@ As the PeopleCrudClient will be deployed on your real machine, the above host pa
 
     git clone https://github.com/vmvini/peoplecrud_dac.git
 
-**2- Inside every module folder, do: `mvn clean install **
+**2- Inside every module folder, do: mvn clean install**
     
     follow the order below:
       1- PeopleCrudLibrary
