@@ -25,8 +25,8 @@ EXPOSE      3700
 WORKDIR     /usr/glassfish4
 
 ADD target/PeopleCrudCore.jar $WORKDIR
-ADD PeopleCrudLibrary-1.0-SNAPSHOT.jar /usr/glassfish4/glassfish/lib/
-ADD postgresql-9.1-901-1.jdbc4.jar /usr/glassfish4/glassfish/lib/
+ADD target/lib/PeopleCrudLibrary-1.0-SNAPSHOT.jar /usr/glassfish4/glassfish/lib/
+ADD target/lib/postgresql-9.1-901-1.jdbc4.jar /usr/glassfish4/glassfish/lib/
 
 #iniciar Glassfish, implantar PeopleCrudCore.jar, fix para impedir que esse container feche após a implantação
 CMD asadmin start-domain && asadmin deploy PeopleCrudCore.jar && tail -f /dev/null
