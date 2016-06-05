@@ -8,6 +8,7 @@ package ads.dac.peoplecrudclient;
 import com.vmvini.peoplecrudlibrary.Person;
 import com.vmvini.peoplecrudlibrary.PersonService;
 import com.vmvini.peoplecrudlibrary.ServiceLocator;
+import java.util.List;
 
 /**
  *
@@ -40,6 +41,11 @@ public class PersonController {
         buildPersonService().save(p);
         System.out.println("Person Saved");
         
+   }
+   
+   public Object[] getPersons(){
+       List<Person> persons = buildPersonService().list();
+       return persons.toArray();
    }
    
    
