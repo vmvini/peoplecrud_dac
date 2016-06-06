@@ -1,0 +1,14 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.vmvini.peoplecrud</groupId>
+    <artifactId>peoplecrud-aggregation</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>PeopleCrudLibrary</module>
+        <module>PeopleCrudCore</module>
+        <module>PeopleCrud</module>
+	<module>PeopleCrudClient</module>
+    </modules>
+</project>
