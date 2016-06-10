@@ -10,5 +10,5 @@
         <module>PeopleCrudCore</module>
         <module>PeopleCrud</module>
 	<module>PeopleCrudClient</module>
-    </modules>
+     </modules>
 </project>

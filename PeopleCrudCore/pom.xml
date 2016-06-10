@@ -71,28 +71,7 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-            <groupId>com.spotify</groupId>
-            <artifactId>docker-maven-plugin</artifactId>
-            <version>0.4.10</version>
-            <executions>
-                <execution>
-                  <id>build-image</id>
-                  <phase>install</phase>
-                  <goals>
-                    <goal>build</goal>
-                  </goals>
-                  <configuration>
-                    <imageName>glassfish-peoplecrud</imageName>
-                    <dockerDirectory>${project.basedir}</dockerDirectory>
-                    <forceTags>true</forceTags>
-                    <imageTags>
-                      <imageTag>glassfish-peoplecrud</imageTag>
-                    </imageTags>
-                  </configuration>
-                </execution>
-            </executions>
-          </plugin>
+          
         </plugins>
     </build>
 

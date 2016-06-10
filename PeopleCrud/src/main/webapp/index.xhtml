@@ -7,6 +7,30 @@
     <head><title>PeopleCrud</title></head>
     
     <body>
+        <h1>USER CART</h1>
+        
+        <h:form>
+            Name: <h:inputText value="#{userCartController.one_item}" /><br></br>
+            <h:commandButton value="Add Item" 
+                             action="#{userCartController.add()}" />
+
+            <h:commandButton value="Finalize" 
+                             action="#{userCartController.finalizar()}" />
+            
+            <h:messages />
+        </h:form>
+        
+         <h1>User Cart's List</h1>
+         <h:dataTable value="#{userCartController.items}" var="item">
+            <h:column>
+                <h:outputText value="#{item}" />
+                <hr></hr>
+            </h:column>
+        </h:dataTable>
+        
+        
+        
+        <!--
         <h1> ADD A PERSON </h1>
         <h:form>
             Name: <h:inputText value="#{personController.person.name}" /><br></br>
@@ -26,7 +50,8 @@
                 <hr></hr>
             </h:column>
         </h:dataTable>
-
+        
+      -->
     </body>
          
 </html>

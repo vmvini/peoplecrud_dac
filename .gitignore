@@ -15,3 +15,7 @@ PeopleCrud/target/
 PeopleCrudCore/target/
 PeopleCrudLibrary/target/
 /PeopleCrudClient/target/
+/bdnc/target/
+/JTSExampleModel/target/
+/JTSExampleDAO/target/
+/JTSExampleDesktopClient/target/
