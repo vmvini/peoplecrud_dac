@@ -11,6 +11,7 @@ import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import java.util.List;
 import java.util.ArrayList;
+import javax.ejb.EJB;
 /**
  *
  * @author vmvini
@@ -23,20 +24,32 @@ public class UserCart implements UserCartInterface {
     
     private List<String> items = new ArrayList();
     
+    @EJB
+    private Logger logger;
+    
     @Override
     public void add(String item) {
         items.add(item);
+        logger.saveMessage("item adicionado: " + item);
     }
     
     @Override
     @Remove
     public void finalize(){
         System.out.println("EXIBINDO LISTA");
+        logger.saveMessage("Finalizando compra!!!");
+        logger.saveMessage("ITENS: ");
+        logger.saveMessage("------------------");
         for(String item : items){
             System.out.println(item);
+           
             System.out.println("numero de items: " + items.size());
+            
+             logger.saveMessage(item);
         }
         System.out.println("COMPRA FINALIZADA");
+        logger.saveMessage("------------------");
+        
     }
 
     
